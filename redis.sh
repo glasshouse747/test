@@ -1,6 +1,6 @@
 dnf module disable redis -y
 dnf module enable redis:7 -y
 dnf install redis -y
-sed -e 'i/127.0.0.1/0.0.0.0/g' -e 's/protected-mode yes/protected-mode no' /etc/redis/redis.conf
+sed -e '/127.0.0.1/c 0.0.0.0/g' -e '/protected-mode yes/c protected-mode no' /etc/redis/redis.conf
 systemctl enable redis
 systemctl start redis
