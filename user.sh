@@ -1,7 +1,7 @@
-rm -rf /app
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
 dnf install nodejs -y
+rm -rf /app
 cp user.service /etc/systemd/system/user.service
 useradd roboshop
 mkdir /app
