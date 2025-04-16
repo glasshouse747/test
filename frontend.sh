@@ -7,3 +7,8 @@ cd /usr/share/nginx/html
 unzip /tmp/frontend.zip
 systemctl enable nginx
 systemctl start nginx
+cp nginx.conf /etc/nginx/nginx.conf
+curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
+cd /usr/share/nginx/html
+unzip /tmp/frontend.zip
+systemctl restart nginx
